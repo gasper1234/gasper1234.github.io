@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orientacija</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- LaTeX CSS -->
+    <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+
+    <style>
+        h1 {
+            
+        }
+        .container {
+            max-width: 100%;
+        }
+        
+        /* Media query for screens larger than 576px */
+        @media (min-width: 576px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+        /* Remove outline and highlight effects for navbar links */
+        .nav-link {
+            outline: none; /* Remove outline on focus */
+            box-shadow: none; /* Remove any box shadow effect */
+            text-decoration: none; /* Remove underline if it appears */
+        }
+
+        .nav-link:focus, .nav-link:active {
+            outline: none; /* Remove the blue outline */
+            box-shadow: none; /* Remove any box shadow effect */
+        }
+        .navbar-brand {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        /* Optional: Prevent link text from being highlighted */
+        .nav-link:focus, .nav-link:active {
+            background-color: transparent; /* No background change on focus */
+            color: inherit; /* Maintain original text color */
+        }
+        /* Adjust font size and line height */
+        body {
+            max-width: 128ch;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+                /* Remove any list-style or numbering in the navbar */
+        .navbar-nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar-nav li::before {
+            content: none; /* Remove any custom content added by LaTeX.css */
+        }
+        /* Optional: If specific classes are defined, increase their font size too */
+        body {
+            font-size: calc(1rem + 2pt); /* Increase base font size */
+        }/* Use the dark mode styles from LaTeX.css for the navbar */
+        body.latex-dark .navbar {
+            background-color: var(--latex-dark-background); /* Use the dark background from LaTeX.css */
+            color: var(--latex-light-text); /* Use the light text color from LaTeX.css */
+        }
+
+        body.latex-dark .navbar .nav-link {
+            color: var(--latex-light-text); /* Light text color for nav links */
+        }
+
+        body.latex-dark .navbar .nav-link:hover {
+            color: var(--latex-highlight-text); /* Use a highlight color for hover effect */
+        }
+
+        body.latex-dark .navbar-brand {
+            color: var(--latex-light-text); /* Light text color for the brand */
+        }
+            a {
+        text-decoration: none; /* Remove underline */
+        border: none; /* Remove any border */
+    }
+
+    /* Ensure the links don't show an outline or border when focused or active */
+    a:focus, a:active {
+        outline: none; /* Remove outline */
+        border: none; /* Remove border */
+    }
+        </style>
+</head>
+<body>
+
+    <!-- About Section -->
+    <section class="container-fluid">
+        <div class="container">
+            <div class="abstract text-center">
+                <p class="centered"> Vabljen na gorsko kolesarko orientacijo, ki jo organiziramo <a href="https://radovljica1-skavti.si/">Radovljiški skavti</a>!
+                <br>
+                <br>
+                <br> 14. junija se bo po gozdovih Jelovice odvijala skavtska gorskokolesarska orientacija.
+                Dogodek je v prvi vrsti namenjen skavtom, vendar pa se nanj lahko prijavi kdorkoli.
+                <br>
+                <br>
+                Orientacija bo potekala v treh kategorijah: skavti, neskavti in skupine (3-5 ljudi).
+                <br>
+                <br>
+                Začela se bo v soboto 14.6.2025 ob 9. uri na <a href="https://maps.app.goo.gl/c1y7VaEhJ8GGZYik8">Spodnjem Lancovem</a>, zaključila pa se bo okoli treh. Več prostora za parkiranje je na
+                <a href="https://www.google.com/maps/place/Radovljica/@46.34086,14.1718225,399m/data=!3m1!1e3!4m6!3m5!1s0x477a9612a376d05d:0x971fa93afbd522ff!8m2!3d46.340416!4d14.1737585!16s%2Fg%2F1z264lm_9?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D">železniški postaji Radovljica</a>
+                <br>
+                <br>
+                Za udeležbo potrebuješ kolo primerno za vožnjo po makadamu, čelado in kompas. Prav bo prišla tudi kakšna frutabela in bidon, ter komplet za menjavo gum.
+                Točke bodo postavljene ob cesti, bo pa za dostop do njih potrebno narediti nekaj (deset) metrov peš, tako da je potrebna tudi primerna obutev.
+                Uporaba GPS naprav seveda ni dovoljena.
+                <br>
+                <br>
+                Prijaviš se lahko <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3sf79L_7ldEe-SN1YlSFr6T16Kx8AHYr7uKxp7dnqzerodQ/viewform?usp=header">tukaj</a>. Prijave potekajo do 11. junija.
+                <br>
+                Več info na gasper.jalen@skavti.si
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Picture Section -->
+    <section class="container-fluid mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Picture 1 (Randomly Selected) -->
+                <div class="col-md-6 mb-4">
+                    <img id="randomImage1" class="img-fluid" alt="Random Image 1" style="width: 100%; object-fit: cover;">
+                </div>
+                <!-- Picture 2 (Randomly Selected) -->
+                <div class="col-md-6 mb-4">
+                    <img id="randomImage2" class="img-fluid" alt="Random Image 2" style="width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- JavaScript to Randomly Select Images -->
+    <script>
+        // List of image file names for Picture 1 and Picture 2
+        const images1 = ["mojaslika/1.jpg", "mojaslika/2.jpg"];
+        const images2 = ["mojaslika/3_.jpg", "mojaslika/4.jpg"];
+    
+        // Select random images from the lists
+        const randomImage1 = images1[Math.floor(Math.random() * images1.length)];
+        const randomImage2 = images2[Math.floor(Math.random() * images2.length)];
+    
+        // Set the src attributes of the images
+        document.getElementById("randomImage1").src = randomImage1;
+        document.getElementById("randomImage2").src = randomImage2;
+    </script>
+
+
+    <!-- Footer Section -->
+    <footer class="container-fluid text-center">
+        <div class="container">
+            <p>5. 2025</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
